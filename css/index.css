@@ -89,7 +89,9 @@ h1 {
 
     .left_pane {
         width: 100%;
-        padding: 2em 4em;
+        padding: 2em;
+        height: 100vh;
+        box-sizing: border-box;
     }
 
     .right_pane {
@@ -117,6 +119,10 @@ h1 {
     #vertical-nav ul li {
         font-size: 1em;
         text-align: center;
+    }
+
+    #social-meddia-handles a {
+        justify-content: center;
     }
 }
 
