@@ -83,12 +83,13 @@ h1 {
 
 @media screen and (max-width: 600px) {
     .container {
-        flex-direction: column;
+        /*flex-direction: column;*/
+        flex-direction: block;
     }
 
     .left_pane {
         width: 100%;
-        padding: 5em 2em 2em 2em;
+        /*padding: 5em 2em 2em 2em;*/
     }
 
     .right_pane {
@@ -96,7 +97,7 @@ h1 {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
 
     #profile-photo {
@@ -114,6 +115,7 @@ h1 {
 
     #vertical-nav ul {
         padding: 0;
+        align-items: center;
     }
 
     #vertical-nav ul li {
