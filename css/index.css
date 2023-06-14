@@ -78,3 +78,46 @@ h1 {
     color: #333;
     margin: .5em;
 }
+
+/* This is the new CSS for smaller screens (smartphones) */
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left_pane {
+        width: 100%;
+        padding: 5em 2em 2em 2em;
+    }
+
+    .right_pane {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    #title {
+        font-size: 14px;
+    }
+
+    #profile-photo {
+        margin: 0;
+    }
+
+    #vertical-nav ul {
+        padding: 0;
+    }
+
+    #vertical-nav ul li {
+        font-size: 1em;
+    }
+}
+
