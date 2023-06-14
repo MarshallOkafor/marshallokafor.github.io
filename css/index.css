@@ -83,17 +83,18 @@ h1 {
 
 @media screen and (max-width: 600px) {
     .container {
-        /*flex-direction: column;*/
-        flex-direction: block;
+        display: flex;
+        flex-direction: column;
     }
 
     .left_pane {
         width: 100%;
-        /*padding: 5em 2em 2em 2em;*/
+        padding: 2em 4em;
     }
 
     .right_pane {
         width: 100%;
+        padding: 2em;
     }
 
     h1 {
@@ -101,25 +102,21 @@ h1 {
     }
 
     #profile-photo {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
 
     #title {
-        font-size: 14px;
-    }
-
-    #profile-photo {
-        margin: 0;
+        font-size: 18px;
     }
 
     #vertical-nav ul {
         padding: 0;
-        align-items: center;
     }
 
     #vertical-nav ul li {
         font-size: 1em;
+        text-align: center;
     }
 }
 
