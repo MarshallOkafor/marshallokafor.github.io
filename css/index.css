@@ -1,39 +1,55 @@
+html {
+    font-family: Arial;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+head {
+    display: none;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-
-.left_pane {
-    width: 25%;
-    padding: 15em 4em 5em 4em;
-    box-sizing: border-box;
-    background-color: #f0f0f0;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: #002b5c;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
-.right_pane {
-    width: 75%;
-    padding: 20px;
+div {
+    display: block;
+}
+
+#sidebar {
+    padding: 3em 2em 3em 2em;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+header {
+    display: block;
+}
+
+* {
     box-sizing: border-box;
 }
 
-h1 {
+.site-title {
     text-align: center;
-    font-size: 3em;
+    font-size: 2.6em;
+    color: white;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-rendering: optimizeLegibility;
 }
 
 #profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 60%;
+    height: 60%;
     object-fit: cover;
     border-radius: 50%;
     margin: 5px;
@@ -41,47 +57,89 @@ h1 {
     border: none;
 }
 
-#title {
+#research-interests {
+    margin-top: 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2em;
 }
 
-#vertical-nav ul {
+nav {
+    display: flex;
+}
+
+#nav-links {
+    flex-flow: column nowrap;
+}
+
+#sidebar a {
+    color: white;
+}
+
+#sidebar a.active {
+    font-weight: bold;
+}
+
+#sidebar nav > * {
     display: block;
-    padding: 10px 0;
+    line-height: 1.75;
+}
+
+a {
     text-decoration: none;
-    color: #333;
-    list-style-type: none; /* Removes bullets */
-    padding: 0;
 }
 
-#vertical-nav ul li {
-    font-weight: bold; /* Makes text bold */
-    font-size: 1.2em; /* Increases font size */
-    padding: 5px 0;
-    text-decoration: none;
-    color: #333;
+a:-webkit-any {
+    cursor: pointer;
 }
 
-#vertical-nav ul li a {
-    text-decoration: none; /* Removes underline */
-    color: #333; /* Changes link color to dark gray */
+a.category-link, a.page-link, a.home-link {
+    font-size: 1.2em;
 }
 
-#vertical-nav ul li a:hover {
-    text-decoration: underline; /* Adds underline when hovered over */
+#media-handles {
+    max-width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 1em;
 }
 
-#social-media-handles a {
-    display: inline-flex;
-    text-decoration: none;
-    color: #333;
-    margin: .5em;
+#media-handles .icon {
+    font-size: 1.5em;
+    color: #bbb;
+    margin: 0 0.25em;
+    display: inline-block
 }
+
+.icon {
+    vertical-align: middle;
+}
+
+p {
+    text-align: justify;
+}
+
+.content-container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container > .main-content {
+    flex-grow: 1;
+    padding-top: 4em;
+}
+
+.main-content {
+    background: #fff;
+    color: #515151;
+    padding: 3em;
+}
+
+
 
 /* This is the new CSS for smaller screens (smartphones) */
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
     .container {
         display: flex;
         flex-direction: column;
@@ -100,12 +158,12 @@ h1 {
     }
 
     h1 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     #profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 60%;
+        height: 60%;
     }
 
     #title {
@@ -114,10 +172,11 @@ h1 {
 
     #vertical-nav ul {
         padding: 0;
+        margin-top: 0;
     }
 
     #vertical-nav ul li {
-        font-size: 1em;
+        font-size: 1.3em;
         text-align: center;
     }
 
@@ -125,4 +184,124 @@ h1 {
         justify-content: center;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left_pane {
+        width: 100%;
+        padding: 2em;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .right_pane {
+        width: 100%;
+        padding: 2em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    #profile-photo {
+        width: 50%;
+        height: 50%;
+    }
+
+    #title {
+        font-size: 18px;
+    }
+
+    a.category-link, a.page-link, a.home-link {
+        font-size: 1.2em;
+    }
+
+    #social-meddia-handles a {
+        justify-content: center;
+    }
+}
+
+/* This is the CSS for larger screens (laptops, desktops) */
+
+@media only screen and (min-width: 1200px) {
+    .left_pane {
+        width: 30%; /* adjust this to what fits your design */
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin: 0; /* remove default margins */
+        padding: 1em; /* add your own spacing */
+    }
+
+    #profile-photo {
+        width: 250px;
+        height: 250px;
+    }
+
+    #title {
+        font-size: 1.8em;
+    }
+
+    #vertical-nav ul li {
+        font-size: 1.5em;
+    }
+}
+
+/* This is the CSS for smaller screens (tablets, small laptops) */
+
+@media screen and (max-width: 1199px) and (min-width: 601px) {
+    .left_pane {
+        width: 40%; /* adjust this to what fits your design */
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: 0; /* remove default margins */
+        padding: 0.8em; /* add your own spacing */
+    }
+
+    #profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    #title {
+        font-size: 1.5em;
+    }
+
+    #vertical-nav ul li {
+        font-size: 1.3em;
+    }
+}
+
+/* CSS for larger screens (laptops, desktops) 
+@media screen and (max-width: 1512px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    .left_pane {
+        width: 30%;
+        padding: 8em 4em 5em 4em;
+    }
+
+    #profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    #title {
+        font-size: 1.2em;
+    }
+
+    #vertical-nav ul li {
+        font-size: 1em;
+    }
+}
+*/
 
