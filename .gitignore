@@ -1,6 +1,0 @@
-# NPM files
-/my-app/node_modules/
-/my-app/build/
-/my-app/.env
-.DS_Store
-/my-app/npm-debug.log
